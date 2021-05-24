@@ -110,14 +110,14 @@ const PostsPage = ({dispatch, loading, ideas, current_page, from, to, per_page, 
             <tbody>
 
               {renderPosts()}
-			  <Pagination transparent
-                           current_page={current_page}
-                           from={from}
-                           to={to}
-                           per_page={per_page}
-                           last_page={last_page}
-                           total={total}
-               />
+              <Pagination transparent
+                          current_page={current_page}
+                          from={from}
+                          to={to}
+                          per_page={per_page}
+                          last_page={last_page}
+                          total={total}
+              />
             </tbody>
           </table>
         </div>
@@ -135,7 +135,7 @@ const mapStateToProps = (state) => ({
     per_page: state.ideasReducer.per_page,
     last_page: state.ideasReducer.last_page,
     total: state.ideasReducer.total,
-    hasErrors: state.ideasReducer.hasErrors,
+    hasErrors: state.ideasReducer.hasErrors
 })
 
 export default connect(mapStateToProps)(PostsPage)

@@ -60,7 +60,7 @@ export const Annonce = ({dispatch,loading,post}) => {
 	  <a href={`mailto:${post?.owner.email}`}><i class="fas fa-envelope-square"></i></a>
 	</td>
 	<td className="actionPart border-t-0 bg-gray-100 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-right">
-		<a target="_blank" href={ENVS.PRO.LIVE_URL + '/annonce?id=' + annonceId}><i class="fas fa-link"></i></a>
+		<a target="_blank" href={'/annonce?id=' + annonceId}><i class="fas fa-link"></i></a>
 		 <a href="#"
 			//onClick={(e) => handleDelete(post?.id)}
 				>

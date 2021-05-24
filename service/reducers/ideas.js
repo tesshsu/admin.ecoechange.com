@@ -56,7 +56,7 @@ export default function ideasReducer(state = initialState, action) {
       return {...state,
         loading: false,
         hasErrors: false,
-        ideas: state.ideas.filter(item => item.id !== action.payload.ideaId),
+        cars: state.ideas.filter(item => item.id !== action.payload.ideaId),
       };
     case actions.DELETE_IDEA_FAILURE:
       return {...state, loading: false, hasErrors: true};

@@ -3,21 +3,21 @@ import {fetchUsers} from 'service/actions/users';
 import {connect} from 'react-redux'
 import Admin from "layouts/Admin.js";
 import Pagination from 'components/Annonce/Pagination.js';
-import {Router, useRouter }  from "next/router";
+import { useRouter }  from "next/router";
 import {Users} from 'components/Cards/CardUsers'
 
 const UsersPage = ({dispatch, loading, users, current_page, from, to, per_page, last_page, total, hasErrors}) => {
    const [search, setSearch] = useState("");
    const [filteredUsers, setFilteredUsers] = useState([]);
-   
+
   //pagenations
   const { query } = useRouter();
-  
+
    useEffect(() => {
 	   dispatch(fetchUsers(query.page, query.perPage))
-	  
+
     }, [dispatch])
-   
+
     useEffect(() => {
      setFilteredUsers(
       users?.filter((user) =>
@@ -25,16 +25,16 @@ const UsersPage = ({dispatch, loading, users, current_page, from, to, per_page, 
       )
 		);
 	}, [search, users]);
-  
- 
-  
+
+
+
   const renderUsers = () => {
     if (loading) return <p>Loading users...</p>
     if (hasErrors) return <p>Unable to display users.</p>
     return filteredUsers?.map((user, idx) => <Users key={idx} user={user} {...user}/>)
 	//return users?.map((user) => <Users key={user.id} user={user} />)
   }
-  
+
   return (
     <>
       <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
@@ -62,7 +62,7 @@ const UsersPage = ({dispatch, loading, users, current_page, from, to, per_page, 
           {/* Projects table */}
           <table className="items-center w-full bg-transparent border-collapse">
             <thead>
-              <tr>               
+              <tr>
                 <th className="px-6 bg-gray-100 text-gray-600 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
                   Id | Nom <i class="fas fa-user"></i>
                 </th>

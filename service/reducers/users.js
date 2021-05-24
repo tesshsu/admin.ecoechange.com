@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import * as actions from '../actions/users';
 
 export const initialState = {
@@ -32,7 +31,7 @@ export default function usersReducer(state = initialState, action) {
 		}
     case actions.GET_USERS_FAILURE:
       return {...state, loading: false, hasErrors: true}
-	  
+
 	case actions.DELETE_USER:
       return {
            ...state,
@@ -43,7 +42,7 @@ export default function usersReducer(state = initialState, action) {
     case actions.DELETE_USER_FAILURE:
       return {...state, loading: false, hasErrors: true}
 
-    
+
 	default:
       return state
   }

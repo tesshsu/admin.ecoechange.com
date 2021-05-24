@@ -155,7 +155,7 @@ export function fetchIdeas(page=1, perPage=18, owner = undefined) {
   }
 }
 
-//Filter ideas
+//Filter cars
 export function filterIdeas(page = 1, perPage = 18, postal_code, category, owner_type, sub_category, usage, experience_eco) {
   return async (dispatch) => {
     dispatch(getIdeas())
