@@ -1,6 +1,6 @@
 import React from "react";
-import UserPage from "components/Cards/CardUser.js";
-import UserDropdown from "components/Dropdowns/UserDropdown.js";
+import CardUser from "../../components/Cards/CardUser.js";
+import UserDropdown from "../../components/Dropdowns/UserDropdown.js";
 
 export default function Navbar() {
   return (
@@ -16,7 +16,7 @@ export default function Navbar() {
           >
             Dashboard
           </a>
-		  <UserPage />
+		  <CardUser />
           {/* User */}
           <ul className="flex-col md:flex-row list-none items-center hidden md:flex">
             <UserDropdown />

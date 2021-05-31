@@ -107,17 +107,17 @@ export default function Sidebar() {
                           : "text-gray-400")
                       }
                     ></i>{" "}
-                    Annonces idée
+                    Idées
                   </a>
                 </Link>
               </li>
               <li className="items-center">
-                <Link href="/admin/tables">
+                <Link href="/admin/users">
                   <a
                     href="#pablo"
                     className={
                       "text-xs uppercase py-3 font-bold block " +
-                      (router.pathname.indexOf("/admin/tables") !== -1
+                      (router.pathname.indexOf("/admin/users") !== -1
                         ? "text-blue-500 hover:text-blue-600"
                         : "text-gray-800 hover:text-gray-600")
                     }
@@ -125,12 +125,12 @@ export default function Sidebar() {
                     <i
                       className={
                         "fas fa-users mr-2 text-sm " +
-                        (router.pathname.indexOf("/admin/tables") !== -1
+                        (router.pathname.indexOf("/admin/users") !== -1
                           ? "opacity-75"
                           : "text-gray-400")
                       }
                     ></i>{" "}
-                    List d'utlisateurs
+                    Utlisateurs
                   </a>
                 </Link>
               </li>
