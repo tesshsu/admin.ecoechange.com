@@ -4,7 +4,7 @@ import ENVS from '../../environment';
 import useLoggedUser from "../../service/hooks/useLoggedUser";
 import useAnnonces from "../../service/hooks/useAnnonces";
 
-export const Annonce = ({dispatch,loading,post}) => {
+export const IdeaTableEntry = ({dispatch,loading,post}) => {
 	const {isAuthentificated, loggedUser} = useLoggedUser();
 	const {
 		deleteIdea
