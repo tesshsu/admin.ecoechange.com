@@ -146,7 +146,7 @@ export function fetchIdeas(page=1, perPage=18, owner = undefined) {
       if(response.data){
         dispatch(getIdeasSuccess(response));
       }else{
-        dispatch(getdeasFailure())
+        dispatch(getIdeasFailure())
       }
 
     } catch (error) {

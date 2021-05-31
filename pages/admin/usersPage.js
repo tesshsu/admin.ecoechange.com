@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react"
-import {fetchUsers} from 'service/actions/users';
+import {fetchUsers} from '../../service/actions/users';
 import {connect} from 'react-redux'
-import Admin from "layouts/Admin.js";
-import Pagination from 'components/Annonce/Pagination.js';
+import Admin from "../../layouts/Admin.js";
+import Pagination from '../../components/Table/Pagination';
 import { useRouter }  from "next/router";
-import {Users} from 'components/Cards/CardUsers'
+import {Users} from '../../components/Cards/CardUsers'
 
 const UsersPage = ({dispatch, loading, users, current_page, from, to, per_page, last_page, total, hasErrors}) => {
    const [search, setSearch] = useState("");
