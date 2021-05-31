@@ -16,12 +16,11 @@ import usersReducer from '../service/reducers/users';
 import { setupApiClient } from '../api/client';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "assets/styles/tailwind.css";
+import * as LOGGED_USER_ACTIONS from "../service/actions";
+import useLoggedUser from "../service/hooks/useLoggedUser";
 
 const logger = createLogger();
 const rootReducers = combineReducers({
-  usersReducer: usersReducer,
-  user: userReducer,
-  ideasReducer: ideasReducer,
   ...reducers,
 })
 const store = createStore(
@@ -77,6 +76,7 @@ function getCookie(cname) {
 // Export App
 //------------------------
 export default class MyApp extends App {
+
   static async getInitialProps({ Component, router, ctx }) {
     let pageProps = {};
 
@@ -96,10 +96,11 @@ export default class MyApp extends App {
 
     return { pageProps };
   }
+
   componentDidMount() {
-    const isAuthenticated = getCookie("user");
-    if (isAuthenticated) {
-      const loggedUser = JSON.parse(isAuthenticated).loggedUser;
+    const userCookie = getCookie("user");
+    if (userCookie) {
+      const loggedUser = JSON.parse(userCookie).loggedUser;
       store.dispatch({
         type: LOGGED_USER_ACTIONS.LOGIN,
         payload: {

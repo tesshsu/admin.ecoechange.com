@@ -1,13 +1,13 @@
 import {authHeader, jsonHeader} from '../../api/authRequest';
 import * as API from '../../api';
 // Create Redux action types
-export const GET_USERS = 'GET_USER'
-export const GET_USERS_SUCCESS = 'GET_USER_SUCCESS'
-export const GET_USERS_FAILURE = 'GET_USER_FAILURE'
+export const GET_USERS = 'GET_USERS'
+export const GET_USERS_SUCCESS = 'GET_USERS_SUCCESS'
+export const GET_USERS_FAILURE = 'GET_USERS_FAILURE'
 
 //Delete user action
 export const DELETE_USER = 'DELETE_USER'
-export const DELETE_USER_SUCCESS = 'DELETE_USERS_SUCCESS'
+export const DELETE_USER_SUCCESS = 'DELETE_USER_SUCCESS'
 export const DELETE_USER_FAILURE = 'DELETE_USER_FAILURE'
 
 // Create Redux action creators that return an action
@@ -43,7 +43,7 @@ export const deleteUserFailure = () => ({
 export function fetchUsers(page=1, perPage=18) {
   return async (dispatch) => {
     dispatch(getUsers())
-	
+
     try {
       const response = await API.User.getUsers(perPage, page);
 	  dispatch(getUsersSuccess(response));
@@ -58,7 +58,7 @@ export function fetchUsers(page=1, perPage=18) {
 export const deleteUserList = (id) => {
    return async (dispatch) => {
     dispatch(deleteUser())
-	
+
     try {
       const response = await API.User.deleteUser(id);
 	  dispatch(deleteUserSuccess(response));

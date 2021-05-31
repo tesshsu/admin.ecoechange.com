@@ -1,5 +1,6 @@
 import * as API from '../../api';
 import * as LOADING_OVERLAY_ACTIONS from './loadingOverlay';
+import {useCookies} from "react-cookie";
 
 export const LOGIN_PROVIDER = 'loggedUser/LOGIN_PROVIDER';
 export const LOGIN = 'loggedUser/LOGIN';
